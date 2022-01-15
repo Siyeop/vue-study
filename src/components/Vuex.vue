@@ -8,8 +8,6 @@
 
         <button @click="increaseByMutations(count + 1)"> increaseByMutation </button>
         <button @click="decreaseByMutations(count - 1)"> decreaseByMutation </button>
-
-
     </div>
 </template>
 

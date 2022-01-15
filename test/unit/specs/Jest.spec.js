@@ -15,6 +15,12 @@ beforeEach(() => {
     second = vm._data.second
 })
 
+
+test('2 * 2 to be 4', () => {
+    expect(4).toBe(4);
+});
+
+
 describe('Jest.vue', () => {
     describe('유효성 검사', () => {
         it('숫자가 아닌 Null 또는 문자열을 입력할 경우 결과값이 에러(NaN)인지 확인한다.', () => {

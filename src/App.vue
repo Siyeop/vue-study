@@ -6,6 +6,7 @@
                 <div @click="moveToCalculator">Calculator</div>
                 <div @click="moveToVuex">Vuex</div>
                 <div @click="moveToJest">Jest</div>
+                <div @click="moveToEvent">Event</div>
             </div>
             <router-view/>
         </div>
@@ -20,14 +21,23 @@ export default {
 
     methods: {
         moveToCalculator() {
-            this.$router.push('/calc');
+            this.routeIfPossible('/calc');
         },
         moveToVuex() {
-            this.$router.push('/vuex');
+            this.routeIfPossible('/vuex');
         },
         moveToJest() {
-            this.$router.push('/jest');
+            this.routeIfPossible('/jest');
         },
+        moveToEvent() {
+            this.routeIfPossible('/event');
+        },
+        routeIfPossible(route) {
+            if(this.$route.path !== route) {
+                this.$router.push(route);
+            }
+        }
+
     }
 }
 </script>
@@ -38,6 +48,9 @@ export default {
     .container__header {
         display: flex;
         margin-bottom: 30px;
+    }
+    .container__header div:hover {
+        cursor: pointer;
     }
 
     .container__header div {
